@@ -381,8 +381,7 @@ void CTFWeaponBaseGrenadeProj::Explode( trace_t *pTrace, int bitsDamageType )
 		}
 	}
 
-	// Use the thrower's position as the reported position
-	Vector vecReported = GetThrower() ? GetThrower()->GetAbsOrigin() : vec3_origin;
+	Vector vecReported = GetAbsOrigin();
 	int nCustomDamage = GetDamageCustom();
 	CTakeDamageInfo info( this, GetThrower(), GetOriginalLauncher(), GetBlastForce(), GetAbsOrigin(), m_flDamage, bitsDamageType, nCustomDamage, &vecReported );
 
